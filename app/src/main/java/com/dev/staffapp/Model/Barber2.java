@@ -3,21 +3,30 @@ package com.dev.staffapp.Model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Barber implements Parcelable {
-    private String name, username, password, barberId,salon,city;
-    private long rating;
+public class Barber2 implements Parcelable {
+    private String name, username, password, barberId;
+    private double rating;
+    private long ratingTimes;
 
-    public Barber() {
+    public Barber2() {
     }
 
-    protected Barber(Parcel in) {
+    protected Barber2(Parcel in) {
         name = in.readString();
         username = in.readString();
         password = in.readString();
         barberId = in.readString();
-        salon = in.readString();
-        city = in.readString();
-        rating = in.readLong();
+        rating = in.readDouble();
+        ratingTimes = in.readLong();
+
+//        if(in.readByte() == 0)
+//        {
+//            rating = null;
+//        } else{
+//            rating = in.readDouble();
+//            ratingTimes = in.readLong();
+//        }
+
     }
 
     public static final Creator<Barber> CREATOR = new Creator<Barber>() {
@@ -31,32 +40,6 @@ public class Barber implements Parcelable {
             return new Barber[size];
         }
     };
-
-    public Barber(String name, String username, String password, String barberId, String salon, String city, long rating) {
-        this.name = name;
-        this.username = username;
-        this.password = password;
-        this.barberId = barberId;
-        this.salon = salon;
-        this.city = city;
-        this.rating = rating;
-    }
-
-    public String getSalon() {
-        return salon;
-    }
-
-    public void setSalon(String salon) {
-        this.salon = salon;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
 
     public String getName() {
         return name;
@@ -82,12 +65,20 @@ public class Barber implements Parcelable {
         this.password = password;
     }
 
-    public long getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(long rating) {
+    public void setRating(double rating) {
         this.rating = rating;
+    }
+
+    public long getRatingTimes() {
+        return ratingTimes;
+    }
+
+    public void setRatingTimes(long ratingTimes) {
+        this.ratingTimes = ratingTimes;
     }
 
     public String getBarberId() {
@@ -109,6 +100,7 @@ public class Barber implements Parcelable {
         parcel.writeString(username);
         parcel.writeString(password);
         parcel.writeString(barberId);
-        parcel.writeLong(rating);
+        parcel.writeDouble(rating);
+        parcel.writeLong(ratingTimes);
     }
 }

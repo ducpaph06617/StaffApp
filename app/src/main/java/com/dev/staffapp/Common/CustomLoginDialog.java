@@ -2,6 +2,7 @@ package com.dev.staffapp.Common;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.dev.staffapp.AdminActivity;
 import com.dev.staffapp.Interface.IDialogClickListner;
 import com.dev.staffapp.R;
 import com.google.android.material.textfield.TextInputEditText;
@@ -81,6 +83,7 @@ public class CustomLoginDialog {
             public void onClick(View v) {
                 iDialogClickListner.onClickPositiveButton(dialog, edt_user.getText().toString(),
                         edt_password.getText().toString());
+
             }
         });
 

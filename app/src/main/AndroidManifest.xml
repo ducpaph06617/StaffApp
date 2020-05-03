@@ -16,9 +16,14 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity"
-            android:theme="@style/SplashScreen"
-            >
+        <activity android:name=".ActivityAddNewAccount"></activity>
+        <activity android:name=".ActivityEditInfor" />
+        <activity android:name=".AdminActivity">
+
+        </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,9 +41,7 @@
 
         <activity android:name=".StaffHomeActivity" />
         <activity android:name=".SalonListActivity" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

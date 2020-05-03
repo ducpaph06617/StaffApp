@@ -32,7 +32,10 @@ import java.util.Calendar;
 import io.paperdb.Paper;
 
 public class Common {
-
+    public static final String KEY_ENALBE_BUTTON_NEXT = "ENABLE_BUTTON_NEXT";
+    public static final String KEY_BARBER_SELECTED = "BARBER_SELECTED";
+    public static final String KEY_STEP = "STEP";
+    public static int step = 0;
     public static final Object DISABLE_TAG = "DISABLE";
     public static final int TIME_SLOT_TOTAL = 20;
     public static final String LOGGED_KEY = "LOGGED" ;
@@ -54,7 +57,10 @@ public class Common {
     public static final String RATING_BARBER_ID = "RATING_BARBER_ID";
 
     public static String state_name = "";
+    public static String city = "";
+    public static String salon = "";
     public static Salon selectedSalon;
+    public static Salon currentSalon ;
     public static Barber currentBarber;
     public static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd_MM_yyyy");
     public static Calendar bookingDate=Calendar.getInstance();

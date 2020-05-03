@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dev.staffapp.AdminActivity;
 import com.dev.staffapp.Common.Common;
 import com.dev.staffapp.Common.CustomLoginDialog;
 import com.dev.staffapp.Interface.IDialogClickListner;
@@ -147,7 +148,14 @@ public class MySalonAdapter extends RecyclerView.Adapter<MySalonAdapter.MyViewHo
                                 staffHome.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 context.startActivity(staffHome);
 
-                            }else{
+                            }else if (userName.equals("admin")&&password.equals("admin123")){
+                                Intent intent = new Intent(context, AdminActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                context.startActivity(intent);
+                            }
+
+                            else{
                                 loading.dismiss();
                                 Toast.makeText(context,"Wrong userName/password or Wrong salon",
                                         Toast.LENGTH_SHORT).show();
